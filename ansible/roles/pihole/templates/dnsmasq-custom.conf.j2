@@ -1,0 +1,15 @@
+# Forward Active Directory domain queries to domain controller
+server=/ham.mroach.com/10.65.49.10
+
+# VLANs
+server=/mroach.local/10.65.49.1
+
+# Static hosts on management VLAN
+address=/pihole.net.mroach.local/10.65.2.3
+address=/kallax1.net.mroach.local/10.65.2.10
+address=/docker1.net.mroach.local/10.65.2.20
+
+ # Static hosts on services VLAN
+ address=/hass.svc.mroach.local/10.65.3.12
+ address=/prometheus.svc.mroach.local/10.65.3.13
+ address=/grafana.svc.mroach.local/10.65.3.14

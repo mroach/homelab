@@ -1,0 +1,6 @@
+---
+- name: qemu-guest-agent is installed
+  apt:
+    name: qemu-guest-agent
+    state: present
+  tags: qemu

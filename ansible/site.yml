@@ -1,0 +1,21 @@
+---
+
+- hosts: proxmox_servers
+  remote_user: root
+  become: false
+  roles:
+    - common
+    - physical_server
+
+- hosts: docker_servers
+  remote_user: root
+  become: false
+  roles:
+    - common
+    - docker_server
+
+- hosts: pihole_servers
+  remote_user: pi
+  become: true
+  roles:
+    - pihole

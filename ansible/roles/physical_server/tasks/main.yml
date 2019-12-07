@@ -1,0 +1,21 @@
+---
+- name: timezone is Europe/Berlin
+  timezone:
+    name: Europe/Berlin
+
+- name: ntp is installed
+  package:
+    name: ntp
+    state: present
+  tags: ntp
+
+- name: ntp running and enabled
+  service:
+    name: ntp
+    state: started
+    enabled: yes
+
+- name: install gotop
+  apt:
+    deb: https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.deb
+    state: present
