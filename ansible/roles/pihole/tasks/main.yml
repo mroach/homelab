@@ -48,3 +48,31 @@
     dest: /etc/dnsmasq.d/05-custom.conf
   notify:
     - restart dns
+
+- name: cloudflared | install
+  unarchive:
+    src: https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-arm.tgz
+    creates: /opt/bin/cloudflared
+    remote_src: yes
+    dest: /opt/bin
+    mode: 755
+
+- name: cloudflared | configuration
+  copy:
+    dest: /etc/default/cloudflared
+    content: >
+      CLOUDFLARED_OPTS=--port 5053
+      --upstream https://1.1.1.1/dns-query
+      --upstream https://1.0.0.1/dns-query
+      --upstream https://9.9.9.9/dns-query
+
+- name: cloudflared | install systemd service
+  template:
+    src: cloudflared.service.j2
+    dest: /etc/systemd/system/cloudflared.service
+
+- name: cloudflared | enable and start service
+  service:
+    name: cloudflared.service
+    state: started
+    enabled: yes
