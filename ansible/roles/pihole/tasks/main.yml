@@ -33,7 +33,7 @@
 - name: Pi-Hole Exporter | Install systemd unit
   template:
     src: pihole_exporter.service.j2
-    dest: /lib/systemd/system/pihole_exporter.service
+    dest: /etc/systemd/system/pihole_exporter.service
     mode: 644
 
 - name: Pi-Hole Exporter | Enable and start service
