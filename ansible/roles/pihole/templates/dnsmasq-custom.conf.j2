@@ -2,14 +2,20 @@
 server=/ham.mroach.com/10.65.49.10
 
 # VLANs
-server=/mroach.local/10.65.49.1
+server=/svc.home.mroach.com/10.65.49.1
+server=/net.home.mroach.com/10.65.49.1
+server=/tdn.home.mroach.com/10.65.49.1
+server=/iot.home.mroach.com/10.65.49.1
+server=/not.home.mroach.com/10.65.49.1
+server=/lab.home.mroach.com/10.65.49.1
 
 # Static hosts on management VLAN
-address=/pihole.net.mroach.local/10.65.2.3
-address=/kallax1.net.mroach.local/10.65.2.10
-address=/docker1.net.mroach.local/10.65.2.20
+address=/pihole.net.home.mroach.com/10.65.2.3
+address=/kallax1.net.home.mroach.com/10.65.2.10
+address=/docker1.net.home.mroach.com/10.65.2.20
 
  # Static hosts on services VLAN
- address=/hass.svc.mroach.local/10.65.3.12
- address=/prometheus.svc.mroach.local/10.65.3.13
- address=/grafana.svc.mroach.local/10.65.3.14
+address=/iperf3.svc.home.mroach.com/10.65.3.11
+address=/hass.svc.home.mroach.com/10.65.3.12
+address=/prometheus.svc.home.mroach.com/10.65.3.13
+address=/grafana.svc.home.mroach.com/10.65.3.14
