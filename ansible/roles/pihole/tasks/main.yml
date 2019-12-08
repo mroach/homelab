@@ -1,4 +1,24 @@
 ---
+- name: pi | disable wifi
+  lineinfile:
+    path: /boot/config.txt
+    line: dtoverlay=pi3-disable-wifi
+
+- name: pi | disable bluetooth
+  lineinfile:
+    path: /boot/config.txt
+    line: dtoverlay=pi3-disable-bt
+
+- name: pi | set PoE fan threshold 0
+  lineinfile:
+    path: /boot/config.txt
+    line: dtparam=poe_fan_temp0=65000,poe_fan_temp0_hyst=5000
+
+- name: pi | set PoE fan threshold 1
+  lineinfile:
+    path: /boot/config.txt
+    line: dtparam=poe_fan_temp1=77000,poe_fan_temp1_hyst=2000
+
 - name: Create /opt/bin
   file:
     path: /opt/bin
