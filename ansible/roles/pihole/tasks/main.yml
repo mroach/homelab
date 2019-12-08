@@ -46,3 +46,5 @@
   template:
     src: dnsmasq-custom.conf.j2
     dest: /etc/dnsmasq.d/05-custom.conf
+  notify:
+    - restart dns
